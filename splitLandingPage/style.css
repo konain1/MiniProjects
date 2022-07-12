@@ -1,0 +1,126 @@
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    background-color: #333;
+}
+.spilit {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+h1 {
+    position: absolute;
+    font-size: 4rem;
+    color: #fff;
+    left: 50%;
+    top:25%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+.spilit.left {
+    background-image: url('./images/3975425-screenshot2022-05-10at8.41.54am.png');
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.spilit.right {
+    background-image: url('./images/xbox.jpg');
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.spilit.left::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(83, 143, 246);
+    opacity: 0.5;
+}
+.spilit.right::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(43, 43, 43);
+    opacity: 0.5;
+}
+.btn {
+    position: absolute;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    border: 0.2rem solid #fff;
+    width: 10rem;
+    padding: 1.5rem;
+    font-size: 1rem;
+}
+.spilit.left .btn:hover {
+    background-color: rgb(83, 143, 246);
+    /* color: rgb(32, 24, 24); */
+    border: rgb(83, 143, 246); ;
+   
+}
+
+.spilit.right .btn:hover {
+    background-color: rgb(41, 244, 85);
+   
+    border:rgb(41, 244, 85);
+   
+}
+
+.hover-left .left {
+    width: 75%;
+}
+.hover-left .right {
+    width: 25%;
+}
+
+.hover-right .right {
+    width: 75%;
+}
+.hover-right .left {
+    width: 25%;
+}
+
+.spilit.right,
+.spilit.left,
+.spilit.right::before,
+.spilit.left::before{
+transition: all 1000ms ease-in-out;
+}
+
+@media (max-width:800px){
+    h1{
+        font-size: 2rem;
+        top: 30%;
+    }
+
+    .btn {
+        padding: 1.2rem;
+        width: 8rem;
+    }
+}
