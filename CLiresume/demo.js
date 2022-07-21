@@ -7,15 +7,17 @@ import inquirer from 'inquirer';
 inquirer
   .prompt([
     {
-      name: 'faveReptile',
-      message: 'What is your favorite reptile?'
-    },
-    {
-      name: 'anime',
-      message: 'What is your favorite anime?'
+      type:"list",
+      name: 'selection',
+      choices: ["skills","about","projects"]
     }
   ])
-  .then(answers => {
-    console.info('Answer:', answers.faveReptile);
-    console.info('Answer:', answers.anime);
+  .then(function(ans) {
+    if(ans.selection == 'skills'){
+      console.log("skills selected")
+    }else  if(ans.selection == "about"){
+      console.log("about selected")
+    }else {
+      console.log("projects selected")
+    }
   });
